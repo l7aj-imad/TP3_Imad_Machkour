@@ -1,5 +1,6 @@
-package com.il.java.tp3.api.dao;
+package com.il.java.tp3.api.service;
 
+import com.il.java.tp3.api.dao.PersonneDao;
 import com.il.java.tp3.api.model.Personne;
 import org.springframework.stereotype.Repository;
 
@@ -7,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class PersonneDaoJdbc implements PersonneDao {
+public class PersonneService implements PersonneDao {
 
     List<Personne> personnes;
 
-    public PersonneDaoJdbc() {
+    public PersonneService() {
         this.personnes = new ArrayList<Personne>();
         this.personnes.add(new Personne(1, "name1", 20,"nationality1"));
         this.personnes.add(new Personne(2, "name2", 21,"nationality2"));
