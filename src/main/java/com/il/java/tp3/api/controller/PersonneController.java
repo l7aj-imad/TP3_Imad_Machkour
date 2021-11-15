@@ -8,32 +8,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/personne")
 public class PersonneController {
 
     @Autowired
     private PersonneDao personneDao;
 
-    @GetMapping("/personne")
+    @GetMapping("/all")
     public List<Personne> getPersonne() {
         return personneDao.getAll();
     }
 
-    @GetMapping("/personne/{id}")
-    public Personne getPersonne(@PathVariable int id) {
+    @GetMapping("/find/{id}")
+    public Personne getPersonneById(@PathVariable int id) {
         return personneDao.findById(id);
     }
 
-    @PutMapping("/personne/{id}")
-    public Personne putPersonne(@PathVariable int id, @RequestBody Personne p) {
+    @PutMapping("/update/{id}")
+    public Personne updatePersonne(@PathVariable int id, @RequestBody Personne p) {
         return personneDao.update(id, p);
     }
 
-    @PostMapping("/personne")
-    public boolean postPersonne(@RequestBody Personne p) {
+    @PostMapping("/add")
+    public boolean addPersonne(@RequestBody Personne p) {
         return personneDao.add(p);
     }
 
-    @DeleteMapping("/personne/{id}")
+    @DeleteMapping("/delete/{id}")
     public boolean deletePersonne(@PathVariable int id) {
         return personneDao.delete(id);
     }
