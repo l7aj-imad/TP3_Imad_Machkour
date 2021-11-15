@@ -13,10 +13,10 @@ public class PersonneDaoJdbc implements PersonneDao {
 
     public PersonneDaoJdbc() {
         this.personnes = new ArrayList<Personne>();
-        this.personnes.add(new Personne(1, "nom1", 20,"nationality1"));
-        this.personnes.add(new Personne(2, "nom2", 21,"nationality2"));
-        this.personnes.add(new Personne(3, "nom3", 22,"nationality3"));
-        this.personnes.add(new Personne(4, "nom4", 23,"nationality4"));
+        this.personnes.add(new Personne(1, "name1", 20,"nationality1"));
+        this.personnes.add(new Personne(2, "name2", 21,"nationality2"));
+        this.personnes.add(new Personne(3, "name3", 22,"nationality3"));
+        this.personnes.add(new Personne(4, "name4", 23,"nationality4"));
     }
 
     public Personne findById(int id) {
@@ -35,7 +35,7 @@ public class PersonneDaoJdbc implements PersonneDao {
     public Personne update(int id, Personne personne) {
         for (Personne p : this.personnes) {
             if (id == p.getId()) {
-                p.setNom(personne.getNom());
+                p.setName(personne.getName());
                 p.setAge(personne.getAge());
                 p.setNationality(personne.getNationality());
                 return p;
